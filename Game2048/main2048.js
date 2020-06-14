@@ -86,7 +86,7 @@ function updateBoardView() { //根据board值更改前端显示
 
   //设置文本正常显示【行高&字体】
   $(".number-cell").css("line-height",cellSildeLength+"px");
-  $(".number-cell").css("font-size",0.25*cellSildeLength+"px");
+  $(".number-cell").css("font-size",0.18*cellSildeLength+"px");
   $(".number-cell").css("border-radius",0.02 * cellSildeLength);
 }
 
@@ -176,7 +176,7 @@ document.addEventListener("touchstart",function(event) {
 //排除Android4.0的19827号bug
 document.addEventListener("touchmove",function(event) {
   event.preventDefault();
-});
+}, { passive: false });
 
 document.addEventListener("touchend",function(event) {
   let endX = event.changedTouches[0].pageX;

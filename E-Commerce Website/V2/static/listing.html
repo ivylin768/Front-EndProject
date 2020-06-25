@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-danger navbar-dark">
+    <a class="navbar-brand" href="#">Ivy's Shopping Mall</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="./home.html">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="./listing.html">Product Listing<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="main" class="container-fluid">
+    <!-- filter -->
+    <div class="filter" style="margin-top: 1rem;">
+        <input v-model="min_price" type="number" min="0" placeholder="minimum price" />
+        <input v-model="search_key" type="text" placeholder="search key" />
+    </div>
+    
+    <!-- item -->
+    <div id="item-list">
+        <div v-for="item in filteredItems" v-bind:id="'item-' + item.id" v-on:click="window.alert(item.id)" class="card border-info mb-3" style="margin-top: 1rem;max-height: fit-content;">
+            <div class="row no-gutters">
+                <div class="col-md-3" style="padding: 1rem;max-height: 200px;">
+                    <div class="card-img img-fluid text-center">
+                        <img v-bind:src="item.imgUrl" v-bind:alt="item.title">
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.title}}</h5>
+                        <p class="card-text">{{item.desc}}</p>
+                    </div>
+                    <div class="row justify-content-between" style="padding: 1rem;">
+                        <div class="col-md-4">
+                            Price: ¥{{item.price}}
+                        </div>
+                        <div class="col-md-5 text-md-right">
+                            <small class="text-muted">Created on {{item.createdOn}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script src="./filter.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+
+
+</body>
+</html>

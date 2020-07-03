@@ -1,9 +1,9 @@
 # Front-EndProject
 
-## ChatBot
+## [ChatBot](https://ivylin768.github.io/Front-EndProject/ChatBot/index.html)
 Developed while self-learning HTML, CSS and JavaScript
 
-## Game2048 
+## [Game2048](https://ivylin768.github.io/Front-EndProject/Game2048/index.html)
 Developed for getting familiar with HTML, CSS and JavaScript
 
 ## E-Commerce Website
